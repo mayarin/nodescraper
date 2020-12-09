@@ -1,5 +1,6 @@
 var express = require('express');
 const https = require('https');
+const jsdom = require('jsdom');
 const url = 'https://maya-pg.net';
 
 var router = express.Router();
@@ -11,7 +12,9 @@ router.get('/', function(req, res, next) {
     let html = '';
     res.on('data', line => html += line);
     res.on('end', () => {
+
       console.log(html);
+
     });
   });
 
