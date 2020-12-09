@@ -25,7 +25,7 @@ router.get('/', function(req, res, next) {
 
         console.log(entry_title);
 
-        console.log(articles[i].textContent);
+        console.log(articles[i].document.textContent);
         // var d = entry_titles[i];
         // var id = d.getAttribute("id");
         // var filename = id + ".txt"
