@@ -22,8 +22,8 @@ router.get('/', function(req, res, next) {
       console.log(entry_titles.length);
 
       for (var i = 0; i < entry_titles.length; i++) {
-        console.log(entry_titles[i]);
-        // var d = divs[i];
+        console.log(entry_titles[i].textContent);
+        // var d = entry_titles[i];
         // var id = d.getAttribute("id");
         // var filename = id + ".txt"
         // var output = d.innerHTML.replace(/^\s*/gm,"")
