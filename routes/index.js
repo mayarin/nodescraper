@@ -1,6 +1,7 @@
 var express = require('express');
 const https = require('https');
 const jsdom = require('jsdom');
+const { JSDOM } = jsdom;
 const url = 'https://maya-pg.net';
 
 var router = express.Router();
