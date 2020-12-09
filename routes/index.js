@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
       for (var i = 0; i < articles.length; i++) {
         console.log(articles[i]);
 
-        var entry_title = articles[i].innerText;
+        var entry_title = articles[i].innerHTML;
 
         console.log(entry_title);
 
