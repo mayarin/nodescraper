@@ -22,8 +22,8 @@ router.get('/', function(req, res, next) {
 
       for (var i = 0; i < articles.length; i++) {
 
-        var entry_title = articles[i].innerHTML;
-        console.log(entry_title.getElementByClassName('entry-title'));
+        var entry_title = articles[i].getElementByClassName('entry-title');
+        console.log(entry_title);
 
         // console.log(articles[i].textContent);
         // var d = entry_titles[i];
