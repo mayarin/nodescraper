@@ -8,12 +8,7 @@ router.get('/', function(req, res, next) {
   const proxyUrl = url.parse('https://maya-pg.net')
   proxyUrl.rejectUnauthorized = false // 証明書によるエラーを無視
 
-  AWS.config.update({
-    httpOptions: {
-      agent: HttpsProxyAgent(proxyUrl)
-    }
-  })
-
+  console.log(proxyUrl);
 
   // res.render('index', { title: 'Express' });
 });
