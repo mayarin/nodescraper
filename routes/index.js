@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
       //console.log(html);
       const dom = new JSDOM(html);
       // console.log(dom.window.document.querySelector('.entry-title').textContent);
-      var entry_titles = dom.window.document.getElementsByTagName('.entry-title');
+      var entry_titles = dom.window.document.getElementsByTagName('entry-title');
       console.log(entry_titles);
       console.log(entry_titles.length);
 
