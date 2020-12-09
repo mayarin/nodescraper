@@ -17,8 +17,16 @@ router.get('/', function(req, res, next) {
       //console.log(html);
       const dom = new JSDOM(html);
       // console.log(dom.window.document.querySelector('.entry-title').textContent);
-      console.log(dom.window.document.getElementsByTagName('.entry-title').textContent);
+      var entry_titles = dom.window.document.getElementsByTagName('.entry-title');
 
+      for (var i = 0; i < entry_titles.length; i++) {
+        console.log(entry_titles[i]);
+        // var d = divs[i];
+        // var id = d.getAttribute("id");
+        // var filename = id + ".txt"
+        // var output = d.innerHTML.replace(/^\s*/gm,"")
+        // fs.writeFile(filename, output)
+      }
     });
   });
 
