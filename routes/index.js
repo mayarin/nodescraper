@@ -17,12 +17,15 @@ router.get('/', function(req, res, next) {
       //console.log(html);
       const dom = new JSDOM(html);
       // console.log(dom.window.document.querySelector('.entry-title').textContent);
-      var entry_titles = dom.window.document.getElementsByTagName('article');
-      console.log(entry_titles);
-      console.log(entry_titles.length);
+      var articles = dom.window.document.getElementsByTagName('article');
+      console.log(articles.length);
 
-      for (var i = 0; i < entry_titles.length; i++) {
-        console.log(entry_titles[i].textContent);
+      for (var i = 0; i < articles.length; i++) {
+        var entry_title = articles[i].getElemntsByClassName('entry-title');
+
+        console.log(entry_title);
+
+        console.log(articles[i].textContent);
         // var d = entry_titles[i];
         // var id = d.getAttribute("id");
         // var filename = id + ".txt"
