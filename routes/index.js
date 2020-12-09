@@ -16,12 +16,13 @@ router.get('/', function(req, res, next) {
 
       //console.log(html);
       const dom = new JSDOM(html);
-      console.log(dom.window.document.querySelector('.entry-title').textContent);
+      // console.log(dom.window.document.querySelector('.entry-title').textContent);
+      console.log(dom.window.document.getElementsByTagName('.entry-title').textContent);
 
     });
   });
 
-  // res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express' });
 });
 
 module.exports = router;
