@@ -23,11 +23,11 @@ router.get('/', function(req, res, next) {
       for (var i = 0; i < articles.length; i++) {
         console.log(articles[i]);
 
-        var entry_title = articles[i].document.getElemntsByClassName('entry-title');
+        // var entry_title = articles[i].document.getElemntsByClassName('entry-title');
 
-        console.log(entry_title);
+        // console.log(entry_title);
 
-        console.log(articles[i].textContent);
+        // console.log(articles[i].textContent);
         // var d = entry_titles[i];
         // var id = d.getAttribute("id");
         // var filename = id + ".txt"
