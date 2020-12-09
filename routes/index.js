@@ -13,7 +13,9 @@ router.get('/', function(req, res, next) {
     res.on('data', line => html += line);
     res.on('end', () => {
 
-      console.log(html);
+      //console.log(html);
+      const dom = new JSDOM(html);
+      console.log(dom.window.document.querySelector('.entry-title').textContent);
 
     });
   });
