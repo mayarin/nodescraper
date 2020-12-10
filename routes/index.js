@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
     res.on('render', () =>{
       console.log('L20');
     });
-    res.render('index', { title: 'Express' });
+    // res.render('index', { title: 'Express' });
 
     res.on('end', () => {
       //console.log(html);
