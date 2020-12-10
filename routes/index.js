@@ -36,7 +36,7 @@ router.get('/', function(req, res, next) {
         }
       }
 
-      res.render('index', { title: 'Express' });
+      res.render('index', { title: 'Express', list_titles : title, list_bodys : body });
 
       console.log(title);
       console.log(body);
