@@ -8,9 +8,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  let title = [];
-  let body = [];
-  let link = [];
+  let data = [];
 
   https.get(url, response => {
     let html = '';
@@ -29,23 +27,20 @@ router.get('/', function(req, res, next) {
         for (let j = 0; j < articles[i].children.length; j++) {
 
           if(articles[i].children[j].className == 'entry-header'){
-            title[i] = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"");
+            data[i]['title'] = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"");
           }
           if(articles[i].children[j].className == 'entry-content'){
-            body[i] = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"");
+            data[i]['body'] = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"");
           }
           if(articles[i].children[j].className == 'post-thumbnail'){
-            link[i] = articles[i].children[j].href;
+            data[i]['link'] = articles[i].children[j].href;
           }
         }
       }
 
-      res.render('index', { title: 'Express', list_titles : title, list_bodys : body });
+      res.render('index', { title: 'Express', list_data : data });
 
-      console.log(title);
-      console.log(body);
-      console.log(link);
-
+      console.log(data);
 
     });
   });
