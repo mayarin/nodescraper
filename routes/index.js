@@ -13,7 +13,10 @@ router.get('/', function(req, res, next) {
 
   https.get(url, res => {
     let html = '';
-    res.on('data', line => html += line);
+    res.on('data', (line) => {
+      html += line
+      console.log(line);
+    });
     res.on('end', () => {
 
       //console.log(html);
@@ -31,10 +34,10 @@ router.get('/', function(req, res, next) {
         for (let j = 0; j < articles[i].children.length; j++) {
 
           if(articles[i].children[j].className == 'entry-header'){
-            title[i] = articles[i].children[j].textContent.trim();
+            title[i] = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"");
           }
           if(articles[i].children[j].className == 'entry-content'){
-            body[i] = articles[i].children[j].textContent.trim();
+            body[i] = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"");
           }
         }
       }
@@ -42,10 +45,10 @@ router.get('/', function(req, res, next) {
       console.log(title);
       console.log(body);
 
-      res.render('index', { title: 'Express' });
 
     });
   });
+  res.render('index', { title: 'Express' });
 
 });
 
