@@ -23,19 +23,28 @@ router.get('/', function(req, res, next) {
       for (var i = 0; i < articles.length; i++) {
         console.log(articles[i]);
         // console.log(articles[i].children);
+        var title = '';
+        var body = '';
+        var link = '';
 
         for (let j = 0; j < articles[i].children.length; j++) {
-
           if(articles[i].children[j].className == 'entry-header'){
-            data[i]['title'] = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"");
+            title = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"");
           }
           if(articles[i].children[j].className == 'entry-content'){
-            data[i]['body'] = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"");
+            body = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"");
           }
           if(articles[i].children[j].className == 'post-thumbnail'){
-            data[i]['link'] = articles[i].children[j].href;
+            link = articles[i].children[j].href;
           }
         }
+
+        data[i] = {
+          'title': title,
+          'body': body,
+          'link': link,
+        }
+
       }
 
       res.render('index', { title: 'Express', list_data : data });
