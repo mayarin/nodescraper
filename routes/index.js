@@ -30,27 +30,15 @@ router.get('/', function(req, res, next) {
 
         for (let j = 0; j < articles[i].children.length; j++) {
 
+          res.send(articles[i].children[j].className);
+          res.send(articles[i].children[j].textContent);
+
           console.log('L30 ', articles[i].children[j].className);
           console.log('L31 ', articles[i].children[j].textContent);
 
 
 
         }
-
-        // console.log(articles[i].children());
-        // console.log(articles[i].children.getElementsByClassName('entry-title'));
-        // console.log(articles[i].children.getElementsByClassName('entry-title').textContent);
-
-        // var entry_title = articles[i].getElementByClassName('entry-title');
-        // console.log(entry_title);
-
-
-        // console.log(articles[i].textContent);
-        // var d = entry_titles[i];
-        // var id = d.getAttribute("id");
-        // var filename = id + ".txt"
-        // var output = d.innerHTML.replace(/^\s*/gm,"")
-        // fs.writeFile(filename, output)
       }
     });
   });
