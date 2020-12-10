@@ -38,11 +38,12 @@ router.get('/', function(req, res, next) {
           }
         }
       }
+
+      console.log(title);
+      console.log(body);
+
     });
   });
-
-  console.log(title);
-  console.log(body);
 
   res.render('index', { title: 'Express' });
 });
