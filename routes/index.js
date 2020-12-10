@@ -33,7 +33,10 @@ router.get('/', function(req, res, next) {
             title = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"");
           }
           if(articles[i].children[j].className == 'entry-content'){
-            body = articles[i].children[j][0].textContent.trim().replace(/\r?\n/g,"").replace(title,"");
+            for(let k = 0; k < articles[i].children[j].children.length; k++){
+              console.log(articles[i].children[j].children[k]);
+              body = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"").replace(title,"");
+            }
           }
           if(articles[i].children[j].className == 'post-thumbnail'){
             link = articles[i].children[j].href;
