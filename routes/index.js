@@ -11,24 +11,15 @@ router.get('/', function(req, res, next) {
   let title = [];
   let body = [];
 
-  https.get(url, res => {
+  https.get(url, response => {
     let html = '';
-    res.on('data', (line) => {
+    response.on('data', (line) => {
       html += line
     });
-    res.on('render', () =>{
-      console.log('L20');
-    });
-    // res.render('index', { title: 'Express' });
-
-    res.on('end', () => {
+    response.on('end', () => {
       //console.log(html);
       const dom = new JSDOM(html);
-      // console.log(dom.window.document.querySelector('.entry-title').textContent);
       var articles = dom.window.document.getElementsByTagName('article');
-      // var articles = dom.window.document.getElementsByTagName('article').getElement;
-      // var articles = dom.window.document.getElementsByTagName('article');
-      console.log(articles.length);
 
       for (var i = 0; i < articles.length; i++) {
         console.log(articles[i]);
@@ -44,6 +35,8 @@ router.get('/', function(req, res, next) {
           }
         }
       }
+
+      res.render('index', { title: 'Express' });
 
       console.log(title);
       console.log(body);
