@@ -10,7 +10,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   let title = [];
   let body = [];
-  let url = [];
+  let link = [];
 
   https.get(url, response => {
     let html = '';
@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
 
           if(articles[i].children[j].className == 'entry-header'){
             title[i] = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"");
-            // url[i] = articles[i].children[j].href;
+            link[i] = articles[i].children[j].href;
           }
           if(articles[i].children[j].className == 'entry-content'){
             body[i] = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"");
