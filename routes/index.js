@@ -15,10 +15,13 @@ router.get('/', function(req, res, next) {
     let html = '';
     res.on('data', (line) => {
       html += line
-      console.log(line);
     });
-    res.on('end', () => {
+    res.on('render', () =>{
+      console.log('L20');
+    });
+    res.render('index', { title: 'Express' });
 
+    res.on('end', () => {
       //console.log(html);
       const dom = new JSDOM(html);
       // console.log(dom.window.document.querySelector('.entry-title').textContent);
@@ -48,7 +51,6 @@ router.get('/', function(req, res, next) {
 
     });
   });
-  res.render('index', { title: 'Express' });
 
 });
 
