@@ -25,6 +25,7 @@ router.get('/', function(req, res, next) {
       for (var i = 0; i < articles.length; i++) {
         console.log(articles[i]);
         console.log(articles[i].children);
+        console.log(articles[i].children());
         console.log(articles[i].children.getElementsByClassName('entry-title'));
         console.log(articles[i].children.getElementsByClassName('entry-title').textContent);
 
