@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
 
       for (var i = 0; i < articles.length; i++) {
         console.log(articles[i]);
-        console.log(articles[i].getBody());
+        console.log(articles[i].open());
 
         var entry_title = articles[i].getElementByClassName('entry-title');
         console.log(entry_title);
