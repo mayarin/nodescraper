@@ -30,20 +30,21 @@ router.get('/', function(req, res, next) {
 
         for (let j = 0; j < articles[i].children.length; j++) {
 
-          res.send(articles[i].children[j].className);
-          res.send(articles[i].children[j].textContent);
-
-          console.log('L30 ', articles[i].children[j].className);
-          console.log('L31 ', articles[i].children[j].textContent);
-
-
-
+          if(articles[i].children[j].className == 'entry-header'){
+            title[i] = articles[i].children[j].textContent;
+          }
+          if(articles[i].children[j].className == 'entry-content'){
+            body[i] = articles[i].children[j].textContent;
+          }
         }
       }
     });
   });
 
-  // res.render('index', { title: 'Express' });
+  console.log(title);
+  console.log(body);
+
+  res.render('index', { title: 'Express' });
 });
 
 module.exports = router;
