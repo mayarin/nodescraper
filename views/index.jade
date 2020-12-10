@@ -6,6 +6,6 @@ block content
 
   ul
     each data in list_data
-      li a(href=#{data.link}) #{data.title}
+      li: a(href="#{data.link}", target="_blank") #{data.title}
       br
       | #{data.body}
