@@ -31,10 +31,10 @@ router.get('/', function(req, res, next) {
         for (let j = 0; j < articles[i].children.length; j++) {
 
           if(articles[i].children[j].className == 'entry-header'){
-            title[i] = articles[i].children[j].textContent;
+            title[i] = articles[i].children[j].textContent.trim();
           }
           if(articles[i].children[j].className == 'entry-content'){
-            body[i] = articles[i].children[j].textContent;
+            body[i] = articles[i].children[j].textContent.trim();
           }
         }
       }
@@ -42,10 +42,11 @@ router.get('/', function(req, res, next) {
       console.log(title);
       console.log(body);
 
+      res.render('index', { title: 'Express' });
+
     });
   });
 
-  res.render('index', { title: 'Express' });
 });
 
 module.exports = router;
