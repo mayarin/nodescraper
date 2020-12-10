@@ -5,5 +5,7 @@ block content
   p Welcome to #{title}
 
   ul
-    each list_data in list_datas
-      li #{list_data}
+    each data in list_data
+      li a.link(href=#{data.link}) #{data.title}
+      br
+      | #{data.body}
