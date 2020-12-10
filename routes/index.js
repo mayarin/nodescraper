@@ -8,11 +8,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  let title = [];
+  let body = [];
 
   https.get(url, res => {
     let html = '';
-    let title = [];
-    let body = [];
     res.on('data', line => html += line);
     res.on('end', () => {
 
