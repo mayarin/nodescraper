@@ -24,13 +24,19 @@ router.get('/', function(req, res, next) {
 
       for (var i = 0; i < articles.length; i++) {
         console.log(articles[i]);
-        console.log(articles[i].children);
-        console.log(articles[i].children());
-        console.log(articles[i].children.getElementsByClassName('entry-title'));
-        console.log(articles[i].children.getElementsByClassName('entry-title').textContent);
+        // console.log(articles[i].children);
 
-        var entry_title = articles[i].getElementByClassName('entry-title');
-        console.log(entry_title);
+        for (let j = 0; j < articles[i].children.length; j++) {
+          console.log(articles[i].children[j]);
+        }
+
+        // console.log(articles[i].children());
+        // console.log(articles[i].children.getElementsByClassName('entry-title'));
+        // console.log(articles[i].children.getElementsByClassName('entry-title').textContent);
+
+        // var entry_title = articles[i].getElementByClassName('entry-title');
+        // console.log(entry_title);
+
 
         // console.log(articles[i].textContent);
         // var d = entry_titles[i];
