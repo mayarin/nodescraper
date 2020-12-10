@@ -11,6 +11,8 @@ router.get('/', function(req, res, next) {
 
   https.get(url, res => {
     let html = '';
+    let title = [];
+    let body = [];
     res.on('data', line => html += line);
     res.on('end', () => {
 
@@ -27,8 +29,12 @@ router.get('/', function(req, res, next) {
         // console.log(articles[i].children);
 
         for (let j = 0; j < articles[i].children.length; j++) {
+
           console.log('L30 ', articles[i].children[j].className);
           console.log('L31 ', articles[i].children[j].textContent);
+
+
+
         }
 
         // console.log(articles[i].children());
