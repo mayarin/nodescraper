@@ -33,7 +33,7 @@ router.get('/', function(req, res, next) {
             title = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"");
           }
           if(articles[i].children[j].className == 'entry-content'){
-            body = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"").replace(/title/g,"");
+            body = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"").replace(title,"");
           }
           if(articles[i].children[j].className == 'post-thumbnail'){
             link = articles[i].children[j].href;
