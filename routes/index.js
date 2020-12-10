@@ -18,11 +18,13 @@ router.get('/', function(req, res, next) {
       const dom = new JSDOM(html);
       // console.log(dom.window.document.querySelector('.entry-title').textContent);
       var articles = dom.window.document.getElementsByTagName('article');
+      // var articles = dom.window.document.getElementsByTagName('article').getElement;
+      // var articles = dom.window.document.getElementsByTagName('article');
       console.log(articles.length);
 
       for (var i = 0; i < articles.length; i++) {
         console.log(articles[i]);
-        console.log(articles[i].open());
+        console.log(articles[i].children);
 
         var entry_title = articles[i].getElementByClassName('entry-title');
         console.log(entry_title);
