@@ -27,6 +27,7 @@ router.get('/', function(req, res, next) {
         var body = '';
         var link = '';
 
+        console.log('L30');
         for (let j = 0; j < articles[i].children.length; j++) {
           if(articles[i].children[j].className == 'entry-header'){
             title = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"");
