@@ -21,8 +21,6 @@ router.get('/', function(req, res, next) {
       var articles = dom.window.document.getElementsByTagName('article');
 
       for (var i = 0; i < articles.length; i++) {
-        console.log(articles[i]);
-        // console.log(articles[i].children);
         var title = '';
         var body = '';
         var link = '';
@@ -33,10 +31,6 @@ router.get('/', function(req, res, next) {
           }
           if(articles[i].children[j].className == 'entry-content'){
             body = articles[i].children[j].children[0].textContent.trim().replace(/\r?\n/g,"");
-
-            // for(let k = 0; k < articles[i].children[j].children.length; k++){
-            //   console.log('L37', k, articles[i].children[j].children[k].textContent);
-            // }
           }
           if(articles[i].children[j].className == 'post-thumbnail'){
             link = articles[i].children[j].href;
@@ -49,12 +43,9 @@ router.get('/', function(req, res, next) {
           }
         }
       }
-      console.log(data);
       res.render('index', { title: 'Scraping...', list_data : data });
-
     });
   });
-
 });
 
 module.exports = router;
