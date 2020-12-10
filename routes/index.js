@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
 
           if(articles[i].children[j].className == 'entry-header'){
             title[i] = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"");
-            url[i] = articles[i].children[j].href;
+            // url[i] = articles[i].children[j].href;
           }
           if(articles[i].children[j].className == 'entry-content'){
             body[i] = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"");
