@@ -33,7 +33,7 @@ router.get('/', function(req, res, next) {
           }
           if(articles[i].children[j].className == 'entry-content'){
             for(let k = 0; k < articles[i].children[j].children.length; k++){
-              console.log('L37', articles[i].children[j].children[k].textContent);
+              console.log('L37', k, articles[i].children[j].children[k].textContent);
               body = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"").replace(title,"");
             }
           }
