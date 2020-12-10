@@ -27,14 +27,13 @@ router.get('/', function(req, res, next) {
         var body = '';
         var link = '';
 
-        console.log('L30');
         for (let j = 0; j < articles[i].children.length; j++) {
           if(articles[i].children[j].className == 'entry-header'){
             title = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"");
           }
           if(articles[i].children[j].className == 'entry-content'){
             for(let k = 0; k < articles[i].children[j].children.length; k++){
-              console.log(articles[i].children[j].children[k]);
+              console.log('L37', articles[i].children[j].children[k].textContent);
               body = articles[i].children[j].textContent.trim().replace(/\r?\n/g,"").replace(title,"");
             }
           }
