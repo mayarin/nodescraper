@@ -46,7 +46,8 @@ router.get('/', function(req, res, next) {
           }
         }
       }
-      res.render('index', { title: 'Express', list_data : data });
+      console.log(data);
+      res.render('index', { title: 'Express', list_datas : data });
 
     });
   });
