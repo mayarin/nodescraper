@@ -38,19 +38,15 @@ router.get('/', function(req, res, next) {
           if(articles[i].children[j].className == 'post-thumbnail'){
             link = articles[i].children[j].href;
           }
-        }
 
-        data[i] = {
-          'title': title,
-          'body': body,
-          'link': link,
+          data[i] = {
+            'title': title,
+            'body': body,
+            'link': link,
+          }
         }
-
       }
-
       res.render('index', { title: 'Express', list_data : data });
-
-      console.log(data);
 
     });
   });
